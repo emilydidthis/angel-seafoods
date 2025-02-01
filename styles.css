@@ -258,6 +258,50 @@ figcaption p {
     padding-left: 30px;
 }
 
+/* ––– DELIVERY ––– */
+#delivery {
+    width: 637px;
+    margin: auto;
+}
+
+#delivery img{
+    width: 100%;
+}
+
+/* ––– PROCESSING ––– */
+#processing {
+    width: 862px;
+    margin: auto;
+}
+
+#processing-video-container {
+    width: 100%;
+    position: relative;
+}
+
+#processing-video {
+    width: 100%;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+  }
+
 /* ––– CONTACT ––– */
 #contact {
     width: 862px;
@@ -278,4 +322,24 @@ footer {
     background: #222;
     color: white;
     font-weight: 600;
+    background-color: black;
+    border-top: 1px solid #474747;
+    font-weight: 400;
+}
+
+footer p:first-of-type {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+footer p:nth-of-type(2) {
+    font-size: 18px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+#fb-logo {
+    margin: 30px 0px;
 }
