@@ -5,14 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angel Seafood</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <section id="home" class="full-screen">
-        <video autoplay muted loop playsinline id="hero-video">
-            <source src="images/1. HERO/A005C049_250113VF.mov" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="overlay"></div>
+       
+        <!-- Carousel -->
+        <div id="hero-carousel">
+             <!-- Gradient Overlay -->
+            <div class="gradient-overlay"></div>
+            <!-- Slide 1 -->
+            <div class="carousel-slide active">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="images/1. HERO/A005C049_250113VF.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <p>Quality</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="images/1. HERO/A006C071_250113CS.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <p>Reputation</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="images/1. HERO/A006C085_250113JM.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <p>Service</p>
+                </div>
+            </div>
+            <!-- End of slides -->
+            <!-- Navigation Buttons -->
+            <button class="prev-btn">❮</button>
+            <button class="next-btn">❯</button>
+        </div>
+        
         <header>
             <img src="images/angel-seafood-logo.png" width="200">
             <p id="year">Since 1986</p>
@@ -32,30 +72,57 @@
             <p>Angel Seafoods has been delivering fresh seafood across Canada since 1986. As a family-run business in its 3rd generation, we continue to uphold our passion for exceptional quality and service.</p>
             <div id="product-carousel"> 
                 <div id="product-thumbnails">
-                    <div class="product-frame">
+                    <div class="product-frame fresh-seafood active">
                         <img src="images/3. PRODUCTS/FreshSeafood_ProductPhoto_1.jpg" alt="fresh seafood">
                         <div class="product-caption">Fresh seafood</div>
                     </div>
-                    <div class="product-frame">
+                    <div class="product-frame frozen-seafood">
                         <img src="images/3. PRODUCTS/DSC02541.jpg" alt="frozen seafood products">
                         <div class="product-caption">Frozen seafood</div>
                     </div>
-                    <div class="product-frame">
+                    <div class="product-frame dry-goods">
                         <img src="images/3. PRODUCTS/DSC02463.jpg" alt="dry goods products">
                         <div class="product-caption">Dry goods</div>
                     </div>
-                    <div class="product-frame">
+                    <div class="product-frame kitchen-wares">
                         <img src="images/3. PRODUCTS/kitchen-wares.jpeg" alt="kitchenware products">
                         <div class="product-caption">Kitchen ware</div>
-                    </div>
+                    </div> 
                 </div>
-                <figure>
-                    <div id="main-product-frame">
+                <figure id="fresh-seafood" class="active">
+                    <div class="main-product-frame" >
                         <img src="images/4. PRODUCTS CONT/fresh_00.jpg" width="100%">
                     </div>
                     <figcaption>
                         <h3>Fresh seafood</h3>
                         <p>Angel Seafoods sources fresh seafood from premium vendors to uphold an industry-leading reputation for quality in Canada. Our catalog includes Japanese BlueFin Tuna, Alaskan Black Cod, Norwegian salmon, Uni, and much more!</p>
+                    </figcaption>
+                </figure>
+                <figure id="frozen-seafood">
+                    <div class="main-product-frame">
+                        <img src="images/4. PRODUCTS CONT/frozen_1.jpg" width="100%">
+                    </div>
+                    <figcaption>
+                        <h3>Frozen Seafood</h3>
+                        <p>Angel Seafoods has an unmatched understanding of the variety of high quality frozen seafoods desired by the Japanese food service sector and aligns with suppliers that can match that.</p>
+                    </figcaption>
+                </figure>
+                <figure id="dry-goods">
+                    <div class="main-product-frame" >
+                        <img src="images/4. PRODUCTS CONT/dry_03.jpg" width="100%">
+                    </div>
+                    <figcaption>
+                        <h3>Dry Goods</h3>
+                        <p>Angel Seafoods takes pride in sourcing food products from Japan and other areas of the world ensuring the quality matches our high standards.</p>
+                    </figcaption>
+                </figure>
+                <figure id="kitchen-wares">
+                    <div class="main-product-frame" >
+                        <img src="images/4. PRODUCTS CONT/kitchen_03.JPG" width="100%">
+                    </div>
+                    <figcaption>
+                        <h3>Kitchen Ware</h3>
+                        <p>We also provide an array of kitchenware from Japanese sashimi knives to bento boxes and containers. We aim to be a one-stop shop, allowing you to order a large selection of items in one place.</p>
                     </figcaption>
                 </figure>
             </div>
@@ -64,22 +131,17 @@
         <section id="features">
             <h2>Our Features</h2>
             <div id="feature-carousel">
-                <figure>
-                    <div id="main-feature-frame">
-                        <img src="images/5. FEATURES/AngelBrand_Image_1.jpg" id="mirin">
-                    </div>
-                    <!-- <figcaption>
-                        <h3>Angel brand</h3>
+                <figure class="feature-image" id="img1">
+                    <img src="images/5. FEATURES/Service Image_1.jpeg" id="service">
+                    <figcaption>
+                        <h3>Service</h3>
                         <div>
-                            <img src="images/logo-mark.png" width="80" height="80">
-                            <p>The Angel Brand represents a curated selection of exclusive products available only through Angel. Each item reflects our dedication to quality, authenticity, and uniqueness.</p>
+                            <p>Angel Seafoods is a multilingual company and can serve you in English, Japanese, Mandarin, Cantonese, Vietnamese, Korean, or French. The growing popularity for Asian foods in Canada has led us to supply people of all backgrounds and cultures.</p>
                         </div>
-                    </figcaption> -->
+                    </figcaption>
                 </figure>
-                <figure>
-                    <div id="main-feature-frame">
-                        <img src="images/5. FEATURES/AngelBrand_Image_1.jpg" id="mirin">
-                    </div>
+                <figure class="feature-image fixed" id="img2">
+                    <img src="images/5. FEATURES/AngelBrand_Image_1.jpg" id="brand">
                     <figcaption>
                         <h3>Angel brand</h3>
                         <div>
@@ -88,17 +150,15 @@
                         </div>
                     </figcaption>
                 </figure>
-                <figure>
-                    <div id="main-feature-frame">
-                        <img src="images/5. FEATURES/AngelBrand_Image_1.jpg" id="mirin">
-                    </div>
-                    <!-- <figcaption>
-                        <h3>Angel brand</h3>
+                <figure class="feature-image" id="img3">
+                    <img src="images/5. FEATURES/japanFresh_Image_1.png" id="fresh">
+                    <figcaption>
+                        <h3>Japan Fresh</h3>
                         <div>
-                            <img src="images/logo-mark.png" width="80" height="80">
-                            <p>The Angel Brand represents a curated selection of exclusive products available only through Angel. Each item reflects our dedication to quality, authenticity, and uniqueness.</p>
+                            <img src="images/5. FEATURES/Japan Fresh_LOGO_temp.jpeg" width="auto" height="80">
+                            <p>Angel Seafoods offers ‘Japan Fresh’, an overnight air shipment of fresh seafood bringing Tokyo’s catch of the day directly to you.</p>
                         </div>
-                    </figcaption> -->
+                    </figcaption>
                 </figure>
             </div>
         </section>
@@ -146,7 +206,8 @@
         <p>8475 Fraser Street<br>Vancouver BC V5X 3Y1</p>
         <img id="fb-logo" src="images/facebook-logo.svg">
         <p>&copy; 2025 Angel Seafoods Ltd. All Rights Reserved. </p>
-        <p>Private Policy | Terms of Use</p>
+        <!-- <p>Private Policy | Terms of Use</p> -->
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

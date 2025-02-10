@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.feature-carousel {
+    position: relative;
+    width: 500px; /* Adjust as needed */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px; /* Space between images */
+    border: 1px solid red;
+  }
+  
+  /* Images */
+
+  .feature-image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid blue;
+    transition: transform 0.5s ease-in-out; /* Smooth animation */
+    cursor: pointer;
+  }
+
+  .feature-image img {
+    opacity: .5;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+  }
+
+  .feature-image figcaption {
+    display: none;
+  }
+  
+  /* Centered Image (Fixed, Unclickable) */
+  .fixed {
+    pointer-events: none; /* Prevent clicks */
+  }
+
+  .fixed figcaption {
+    display: block;
+  }
+  
+  /* Initial Positions */
+  #img1 { transform: translateX(-120px); }
+  #img2 { transform: translateX(0); }
+  #img3 { transform: translateX(120px); }
+  
