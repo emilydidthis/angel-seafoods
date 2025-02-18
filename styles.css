@@ -3,12 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    color: #C6C6C6;
+    /* color: #C6C6C6; */
+    color: white;
 }
 
 body {
     font-family: 'Crimson Text', serif;
-    color: #C6C6C6;
     background-color: #141414;
     line-height: 1.6;
 }
@@ -20,14 +20,6 @@ body {
     height: 100vh;
     position: relative;
 }
-
-/* All overlay positioning */
-/* .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
 
 /* Gradient Overlay */
 .gradient-overlay {
@@ -45,6 +37,7 @@ body {
       );
     /* background: rgba(255, 0, 0, 0.5); */
     z-index: 1;
+
 }
 
 /* Carousel Container */
@@ -55,7 +48,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background: rgba(0, 255, 0, .5); */
     z-index: 0;
 }
 
@@ -65,7 +57,6 @@ body {
     height: 100%;
     object-fit: cover;
     position: relative;
-    /* border: 50px solid blue; */
 }
 
 /* Carousel Slide */
@@ -91,7 +82,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: yellow; */
     z-index: 3;
 }
 
@@ -104,7 +94,6 @@ body {
     line-height: 72.8px;
     letter-spacing: .5em;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Add readability */
-    /* border: 20px solid purple; */
 }
 
 /* Navigation Buttons */
@@ -126,15 +115,23 @@ body {
 .next-btn { right: 10px; }
 
 
-
-
 main{
-    background-image: url(images/background.png);
+    background-image: url(images/background-cropped.png);
     background-repeat: no-repeat;
-    /* background-size: cover; */
-    background-position: center;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    gap: 82px; /* Adds consistent spacing between sections */
 }
 
+footer {
+    width: 1316px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ––– NAVIGATION ––– */
 header {
     position: absolute;
     width: 100%;
@@ -152,24 +149,16 @@ header {
     text-transform: uppercase;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/* ––– NAVIGATION ––– */
-
 nav {
     margin-top: 40px;
+    width: 1316px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2em;
 }
 
-nav a {
+nav a, #lang-toggle {
+    font-family: 'Crimson Text', serif;
     font-size: 20px;
     line-height: 21.6px;
     text-transform: uppercase;
@@ -178,11 +167,16 @@ nav a {
     text-decoration: none;
 }
 
+#lang-toggle {
+    background-color: rgba(0,0,0,0);
+    border: 0px;
+}
 /* ––– SECTIONS  ––– */
 
 section:not(#home) {
-    padding: 80px 20px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    padding-top: 42px;
+    padding-bottom: 42px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -190,29 +184,43 @@ section:not(#home) {
     text-align: center;
 }
 
+
+/* #about {height: 1349px;} */
+/* #features {height: 727px} */
+/* #delivery {height: 671px} */
+/* #processing {height: 645px} */
+/* #contact {height: 270px} */
+
 section p {
     font-size: 20px;
     letter-spacing: .02em;
+    line-height: 30px;
 }
 
-
 h2 {
+    color: white;
     font-size: 44px;
     line-height: 61.6px;
     letter-spacing: .2em;
     text-transform: uppercase;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
 }
 
 /* ––– ABOUT ––– */
 #about{
     width: 862px;
     margin: auto;
+    margin-top: 0px !important; 
+}
+
+#about h2 {
+    padding-top: 168px; 
 }
 
 #about > p {
     font-size: 24px;
-    margin-bottom: 60px;
+    line-height: 36px;
+    margin-bottom: 88px;
 }
 
 #product-carousel {
@@ -222,7 +230,7 @@ h2 {
 #product-thumbnails {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .product-frame {
@@ -235,7 +243,6 @@ h2 {
     justify-content: center; /* Horizontally centers image */
     filter: grayscale(100%); /* Fully desaturate the image */
     transition: filter 0.5s ease; /* Smooth transition for the filter property */
-
 }
   
 .product-frame img {
@@ -261,7 +268,6 @@ h2 {
     letter-spacing: 0.2em;
     text-align: center;
 
-
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Add readability */
 }
 
@@ -271,9 +277,48 @@ h2 {
     overflow: hidden;
 }
 
+/* Carousel styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.product-item {
+    min-width: 100%;
+    display: none;
+}
+
+.product-item.active {
+    display: block;
+}
+
+.product-prev,
+.product-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.product-prev {left: 10px;}
+.product-next {right: 10px;}
+
+
+
 #product-carousel figcaption {
     background-color: #141414;
-    padding: 30px 0px;
+    /* padding: 20px 0px; */
+    height: 121px; /* hard-code instead of padding */
 
     display: flex;
     justify-content: space-between;
@@ -282,12 +327,17 @@ h2 {
 
 /* Hide all figures initially */
 #product-carousel figure {
-    display: none;
+    visibility: hidden; /* Keeps the element in the document flow but hides it */
+    position: absolute; /* Remove from document flow */
+    opacity: 0; /* Makes the element fully transparent */
 }
 
 /* Show the active figure */
 #product-carousel figure.active {
-    display: block;
+    position: relative; /* Bring it back into the document flow (optional, depending on your layout) */
+    visibility: visible; /* Makes the element visible */
+    opacity: 1; /* Makes the element fully opaque */
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out; /* Smooth transition */
 }
 
 /* ------- */
@@ -323,7 +373,8 @@ figcaption p {
 
 #feature-carousel {
     display: flex;
-    width: 2005px; /* 636px * 3 (per image) + 100px in gaps */
+    /* width: 2005px; 636px * 3 (per image) + 100px in gaps */
+    width: 1316px;
     gap: 50px;
     justify-content: center;
     align-items: center; /* vertically centered */
@@ -337,6 +388,8 @@ figcaption p {
     width: 635px;
     transition: transform 0.5s ease-in-out; /* smooth animation */
     cursor: pointer;
+    z-index: 1; /* Default z-index for outer images */
+    transition: transform 0.5s ease-in-out, z-index 0.5s ease-in-out;
 }
 
 .feature-image > img {
@@ -357,6 +410,11 @@ figcaption p {
     flex-direction: column;
     justify-content: center;
     padding: 0px 30px;
+    
+    /* position: absolute; */
+    opacity: 0; /* Start fully transparent */
+    visibility: hidden; /* Hide the element */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .feature-image figcaption div {
@@ -374,16 +432,17 @@ figcaption p {
     padding-left: 30px;
 }
 
-.feature-image figcaption {
-    display: none;
-}
 
 .feature-image.fixed {
     pointer-events: none; /* prevents clicks */
+    z-index: 2; /* Higher z-index for the middle (fixed) image */
 }
 
 .feature-image.fixed figcaption {
     display: flex;
+    /* position: relative; */
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Show the element */
 }
 
 /* Initial Positions */
@@ -400,7 +459,8 @@ figcaption p {
 }
 
 #delivery img{
-    width: 100%;
+    height: 359px;
+    margin-bottom: 28px;
 }
 
 /* ––– PROCESSING ––– */
@@ -410,8 +470,10 @@ figcaption p {
 }
 
 #processing-video-container {
-    width: 100%;
+    /* width: 100%; */
+    height: 485px;
     position: relative;
+    margin-bottom: 28px;
 }
 
 #processing-video {
@@ -441,10 +503,13 @@ figcaption p {
 #contact {
     width: 862px;
     margin: auto; 
+    /* margin-top: 84px; */
+    margin-bottom: 84px !important;
+    /* padding-bottom: 84px; */
 }
 
 #phone-numbers{
-    margin-top: 40px;
+    margin-top: 42px;
     display: flex;
     width: 80%;
     justify-content: space-around;
@@ -477,4 +542,28 @@ footer p {
 
 #fb-logo {
     margin: 30px 0px;
+}
+
+
+/* Indicator Circles */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .indicator.active {
+    background-color: rgba(255, 255, 255, 1);
 }
