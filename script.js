@@ -1,5 +1,30 @@
 
 // ------- HERO CAROUSEL -------
+
+// Select all buttons with the class .hero-nav-button
+const navButtons = document.querySelectorAll('.nav-button');
+
+// Add event listeners to each button
+navButtons.forEach(button => {
+    const img = button.querySelector('img'); // Get the image inside the button
+
+    // Change to active image on mousedown
+    button.addEventListener('mousedown', () => {
+        img.src = button.dataset.active; // Use data-active attribute
+    });
+
+    // Revert to default image on mouseup
+    button.addEventListener('mouseup', () => {
+        img.src = button.dataset.default; // Use data-default attribute
+    });
+
+    // Revert to default image if mouse leaves while clicked
+    button.addEventListener('mouseleave', () => {
+        img.src = button.dataset.default; // Use data-default attribute
+    });
+});
+
+
 const slides = document.querySelectorAll(".carousel-slide");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
@@ -85,8 +110,8 @@ thumbnails.forEach((thumbnail) => {
 document.querySelectorAll('.main-product-frame').forEach((carousel) => {
     const inner = carousel.querySelector('.product-inner');
     const items = carousel.querySelectorAll('.product-item');
-    const prevButton = carousel.querySelector('.product-prev');
-    const nextButton = carousel.querySelector('.product-next');
+    const prevButton = carousel.querySelector('.prev-btn');
+    const nextButton = carousel.querySelector('.next-btn');
     const indicatorsContainer = carousel.querySelector('.carousel-indicators');
     let currentIndex = 0;
     
@@ -161,14 +186,19 @@ function swapImages(clickedImage) {
   order.forEach((element) => element.classList.remove('fixed'));
   clickedImage.classList.add('fixed');
 
+  // Force a reflow to ensure z-index is applied before the transition
+  void order[0].offsetHeight;
+  void order[1].offsetHeight;
+  void order[2].offsetHeight;
+
   // Apply new positions
-  order[0].style.transform = "translateX(-685px)";
+  order[0].style.transform = "translateX(-685px) translateY(106.5px)"; // Move left and down
   order[0].style.zIndex = "1"; // Outer image (left)
-
-  order[1].style.transform = "translateX(0)";  // Middle stays in place
-  order[1].style.zIndex = "2"; // Middle image (highest z-index)
-
-  order[2].style.transform = "translateX(685px)";
+  
+  order[1].style.transform = "translateX(0) translateY(0px)"; // Center and move up
+  order[1].style.zIndex = "10"; // Middle image (highest z-index)
+  
+  order[2].style.transform = "translateX(685px) translateY(106.5px)"; // Move right and down
   order[2].style.zIndex = "1"; // Outer image (right)
 
   // Remove all event listeners first

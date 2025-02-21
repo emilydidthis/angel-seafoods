@@ -9,16 +9,32 @@
 
 body {
     font-family: 'Crimson Text', serif;
-    background-color: #141414;
+    background-color: black;
     line-height: 1.6;
+    font-weight: 400;
+
+    overflow: hidden; /* Hide scrollbar */
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
 }
 
+/* Hide scrollbar but allow scrolling */
+html {
+    overflow: auto; /* Allow scrolling */
+}
+
+/* Custom scrollbar styling (optional) */
+::-webkit-scrollbar {
+    width: 0; /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+    background: transparent; /* Make scrollbar track transparent */
+}
 
 /* ––– HERO ––– */
 
 .full-screen {
-    height: 100vh;
+    /* height: 100vh; */
+    height: 900px;
     position: relative;
+   
 }
 
 /* Gradient Overlay */
@@ -49,6 +65,10 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
+    
+    box-sizing: content-box;
+    border-left: 75px solid #141414;
+    border-right: 75px solid #141414;
 }
 
 /* Video inside the carousel */
@@ -97,37 +117,48 @@ body {
 }
 
 /* Navigation Buttons */
-.prev-btn, .next-btn {
+.nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 1);
-    color: white;
+    background: none;
     border: none;
-    padding: 10px 15px;
     cursor: pointer;
     font-size: 24px;
     border-radius: 5px;
     z-index: 5; /* Top layer */
 }
 
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
+#hero-carousel .prev-btn { left: 10px; padding: 10px 15px; }
+#hero-carousel .next-btn { right: 10px; padding: 10px 15px; }
 
 
 main{
     background-image: url(images/background-cropped.png);
     background-repeat: no-repeat;
     background-position: top center;
+    
     display: flex;
     flex-direction: column;
     gap: 82px; /* Adds consistent spacing between sections */
+    
+    width: 1316px;
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: content-box;
+    border-left: 75px solid #141414;
+    border-right: 75px solid #141414;
 }
 
 footer {
     width: 1316px;
     margin-left: auto;
     margin-right: auto;
+
+    box-sizing: content-box;
+    border-left: 75px solid #141414;
+    border-right: 75px solid #141414;
 }
 
 
@@ -141,8 +172,12 @@ header {
     z-index: 4; /* Above the gradient overlay */
 }
 
+header img { /* angel seafoods logo*/
+    width: 150px;
+}
+
 #year {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 18.2px;
     letter-spacing: .2em;
@@ -159,7 +194,7 @@ nav {
 
 nav a, #lang-toggle {
     font-family: 'Crimson Text', serif;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 21.6px;
     text-transform: uppercase;
     letter-spacing: .2em;
@@ -170,8 +205,10 @@ nav a, #lang-toggle {
 #lang-toggle {
     background-color: rgba(0,0,0,0);
     border: 0px;
+    cursor: pointer;
 }
 /* ––– SECTIONS  ––– */
+
 
 section:not(#home) {
     /* min-height: 100vh; */
@@ -200,6 +237,7 @@ section p {
 h2 {
     color: white;
     font-size: 44px;
+    font-weight: 600;
     line-height: 61.6px;
     letter-spacing: .2em;
     text-transform: uppercase;
@@ -244,6 +282,10 @@ h2 {
     filter: grayscale(100%); /* Fully desaturate the image */
     transition: filter 0.5s ease; /* Smooth transition for the filter property */
 }
+
+.product-frame:hover{
+    cursor: pointer;
+}
   
 .product-frame img {
     height: 100%; /* Adjust as needed */
@@ -256,6 +298,7 @@ h2 {
 
 .product-caption{
     position: absolute; /* Positions the text over the image */
+    width: inherit;
     top: 50%; /* Centers vertically */
     left: 50%; /* Centers horizontally */
     transform: translate(-50%, -50%); /* Adjusts for exact center */
@@ -298,21 +341,9 @@ h2 {
     display: block;
 }
 
-.product-prev,
-.product-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
 
-.product-prev {left: 10px;}
-.product-next {right: 10px;}
-
+.main-product-frame .prev-btn { left: 0px; }
+.main-product-frame .next-btn { right: 0px; }
 
 
 #product-carousel figcaption {
@@ -377,7 +408,6 @@ figcaption p {
     width: 1316px;
     gap: 50px;
     justify-content: center;
-    align-items: center; /* vertically centered */
     height: 625px;
     position: relative; /* allows positioning of overlay */
     overflow: hidden;
@@ -386,9 +416,9 @@ figcaption p {
 .feature-image {
     position: absolute;
     width: 635px;
-    transition: transform 0.5s ease-in-out; /* smooth animation */
     cursor: pointer;
     z-index: 1; /* Default z-index for outer images */
+    will-change: transform, z-index; /* Optimize for transform and z-index changes */
     transition: transform 0.5s ease-in-out, z-index 0.5s ease-in-out;
 }
 
@@ -412,8 +442,12 @@ figcaption p {
     padding: 0px 30px;
     
     /* position: absolute; */
-    opacity: 0; /* Start fully transparent */
-    visibility: hidden; /* Hide the element */
+
+    /* display: none; */
+    /* Start fully transparent */
+    opacity: 0; 
+    /* Hide the element */
+    /* visibility: hidden;  */
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
@@ -446,10 +480,10 @@ figcaption p {
 }
 
 /* Initial Positions */
-#img1 { transform: translateX(-685px); }
+#img1 { transform: translateX(-685px) translateY(106.5px); } /* Left image */
 #img2 { transform: translateX(0); }
-#img3 { transform: translateX(685px); }
-  
+#img3 { transform: translateX(685px) translateY(106.5px); } /* Right image */
+
 
 
 /* ––– DELIVERY ––– */
@@ -516,24 +550,33 @@ figcaption p {
 }
 
 /* Footer */
+
+hr {
+    border: 1px solid #474747;
+    width: 1316px;
+    margin: auto;
+}
+
 footer {
     text-align: center;
-    padding: 20px;
     background: #222;
     color: white;
-    font-weight: 600;
     background-color: black;
-    border-top: 1px solid #474747;
     font-weight: 400;
 }
 
 footer p:first-of-type {
     font-size: 20px;
     margin-bottom: 30px;
+    padding-top: 20px;
 }
 
 footer p:nth-of-type(2) {
     font-size: 18px;
+}
+
+footer p:last-of-type {
+    padding-bottom: 20px;
 }
 
 footer p {

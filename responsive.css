@@ -1,0 +1,290 @@
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: white; /* Default text color */
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    background-color: black;
+    line-height: 1.6;
+    font-weight: 400;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Full-width container */
+.container {
+    width: 100%;
+    max-width: 1316px; /* Maximum width for larger screens */
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding for smaller screens */
+}
+
+/* ===== Hero Section ===== */
+.full-screen {
+    height: 100vh; /* Full viewport height */
+    position: relative;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 1;
+}
+
+#hero-carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    box-sizing: border-box;
+    border-left: 75px solid #141414;
+    border-right: 75px solid #141414;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.overlay p {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 72.8px;
+    letter-spacing: 0.5em;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Navigation Buttons */
+.hero-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
+    z-index: 5;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* ===== Main Content ===== */
+main {
+    background-image: url(images/background-cropped.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    gap: 82px;
+    padding: 20px 0;
+}
+
+/* ===== Sections ===== */
+section:not(#home) {
+    padding: 42px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 61.6px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+section p {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    line-height: 30px;
+}
+
+/* ===== About Section ===== */
+#about {
+    width: 90%;
+    max-width: 862px;
+    margin: 0 auto;
+}
+
+#about h2 {
+    padding-top: 168px;
+}
+
+#about > p {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 88px;
+}
+
+/* ===== Product Carousel ===== */
+#product-carousel {
+    width: 90%;
+    max-width: 862px;
+    margin: 0 auto;
+}
+
+#product-thumbnails {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.product-frame {
+    width: 182px;
+    height: 182px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.product-frame:hover {
+    cursor: pointer;
+    filter: grayscale(0%);
+}
+
+.product-frame img {
+    height: 100%;
+    width: auto;
+}
+
+.product-caption {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    background-color: black;
+    padding: 20px 0;
+}
+
+footer p:first-of-type {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+footer p:nth-of-type(2) {
+    font-size: 18px;
+}
+
+footer p:last-of-type {
+    padding-bottom: 20px;
+}
+
+/* ===== Media Queries for Mobile ===== */
+@media (max-width: 768px) {
+    /* Adjust hero section */
+    .full-screen {
+        height: 600px;
+    }
+
+    .overlay p {
+        font-size: 24px;
+        letter-spacing: 0.2em;
+    }
+
+    /* Adjust navigation buttons */
+    .hero-nav-button {
+        padding: 5px 10px;
+        font-size: 18px;
+    }
+
+    /* Adjust sections */
+    h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    section p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Adjust product carousel */
+    #product-thumbnails {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .product-frame {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Adjust footer */
+    footer p:first-of-type {
+        font-size: 18px;
+    }
+
+    footer p:nth-of-type(2) {
+        font-size: 16px;
+    }
+}

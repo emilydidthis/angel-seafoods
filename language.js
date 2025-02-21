@@ -12,7 +12,7 @@ const translations = {
         nav_delivery: "Delivery",
         nav_processing: "Processing",
         nav_contact: "Contact",
-        nav_toggle: "French",
+        nav_toggle: "Français",
         hero_quality: "Quality",
         hero_reputation: "Reputation",
         hero_service: "Service",
@@ -26,6 +26,7 @@ const translations = {
         dry_goods_text: "Angel Seafoods takes pride in sourcing food products from Japan and other areas of the world, ensuring the quality matches our high standards.",
         kitchen_ware_title: "Kitchen Ware",
         kitchen_ware_text: "We also provide an array of kitchenware from Japanese sashimi knives to bento boxes and containers. We aim to be a one-stop shop, allowing you to order a large selection of items in one place.",
+        features_text: "Our Features",
         service_title: "Service",
         service_text: "Angel Seafoods is a multilingual company and can serve you in English, Japanese, Mandarin, Cantonese, Vietnamese, Korean, or French. The growing popularity for Asian foods in Canada has led us to supply people of all backgrounds and cultures.",
         angel_brand_title: "Angel Brand",
@@ -37,19 +38,20 @@ const translations = {
         processing_title: "Traditional Processing",
         processing_text: "Discover how we ensure quality at every step.",
         contact_title: "Get in Touch",
-        contact_text: "Call us to place an order or ask questions. Our multilingual sales team is happy to assist you in English, Japanese, Chinese, Vietnamese, Korean, or French!"
+        contact_text: "Call us to place an order or ask questions. Our multilingual sales team is happy to assist you in English, Japanese, Chinese, Vietnamese, Korean, or French!",
+        toll_free_text: "Canada Toll-free"
     },
     fr: {
         nav_about: "À propos",
         nav_features: "Caractéristiques",
         nav_delivery: "Livraison",
-        nav_processing: "Transformation et préparation",
+        nav_processing: "Préparation",
         nav_contact: "Contact",
         nav_toggle: "English",
         hero_quality: "Réputation de qualité",
         hero_reputation: "Réputation",
         hero_service: "Service",
-        about_title: "Produits alimentaires japonais de qualité depuis 1986",
+        about_title: "Produits alimentaires japonais <br> de qualité depuis 1986",
         about_text: "Depuis 1986, Angel Seafoods fournit des produits alimentaires japonais de qualité, spécialisés dans les fruits de mer, à travers le Canada.",
         fresh_seafood_title: "Fruits de mer frais",
         fresh_seafood_text: "Angel Seafoods possède une expertise inégalée en matière de « qualité sashimi », car la majorité des produits haut de gamme que nous sélectionnons sont destinés à être consommés crus.",
@@ -59,6 +61,7 @@ const translations = {
         dry_goods_text: "Angel Seafoods s'engage à sélectionner des produits alimentaires du Japon et d'autres régions du monde tout en garantissant une qualité conforme à nos normes élevées.",
         kitchen_ware_title: "Ustensiles de cuisine",
         kitchen_ware_text: "Nous proposons également une gamme d'ustensiles de cuisine, allant des couteaux japonais pour sashimi aux boîtes bento et contenants. Notre objectif est d’être une boutique tout-en-un, vous permettant de commander une large sélection de produits au même endroit.",
+        features_text: "Caractéristiques",
         service_title: "Une entreprise multilingue",
         service_text: "Angel Seafoods est une entreprise multilingue capable de vous servir en anglais, japonais, mandarin, cantonais, vietnamien, coréen et français. L’essor de la popularité des aliments asiatiques au Canada nous a amenés à fournir des produits à des personnes de toutes origines et cultures.",
         angel_brand_title: "Angel Brand",
@@ -70,8 +73,8 @@ const translations = {
         processing_title: "Transformation traditionnelle",
         processing_text: "Découvrez comment nous garantissons la meilleure qualité à chaque étape grâce à des méthodes traditionnelles de découpe et de préparation du poisson.",
         contact_title: "Contactez-nous",
-        contact_text: "Appelez-nous pour passer commande ou poser vos questions. Notre équipe de vente multilingue se fera un plaisir de vous aider en anglais, japonais, mandarin, cantonais, vietnamien, coréen ou français!"
-    }
+        contact_text: "Appelez-nous pour passer commande ou poser vos questions. Notre équipe de vente multilingue se fera un plaisir de vous aider en anglais, japonais, mandarin, cantonais, vietnamien, coréen ou français!",
+        toll_free_text: "Sans frais Canada"}
 };
 
 let currentLang = "en"; // Default language
@@ -106,6 +109,7 @@ function switchLanguage() {
     document.getElementById("kitchen-ware-title").textContent = translations[currentLang].kitchen_ware_title;
     document.getElementById("kitchen-ware-text").textContent = translations[currentLang].kitchen_ware_text;
 
+    document.getElementById("features-text").textContent = translations[currentLang].features_text;
     document.getElementById("service-title").textContent = translations[currentLang].service_title;
     document.getElementById("service-text").textContent = translations[currentLang].service_text;
     document.getElementById("angel-brand-title").textContent = translations[currentLang].angel_brand_title;
@@ -121,6 +125,8 @@ function switchLanguage() {
     
     document.getElementById("contact-title").textContent = translations[currentLang].contact_title;
     document.getElementById("contact-text").textContent = translations[currentLang].contact_text;
+
+    document.getElementById("toll-free-text").textContent = translations[currentLang].toll_free_text;
 }
 
 // Attach event listener

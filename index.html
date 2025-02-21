@@ -11,62 +11,67 @@
 
 </head>
 <body>
-    <section id="home" class="full-screen">
-       
-        <!-- Carousel -->
-        <div id="hero-carousel">
-             <!-- Gradient Overlay -->
-            <div class="gradient-overlay"></div>
-            <!-- Slide 1 -->
-            <div class="carousel-slide active">
-                <video muted playsinline class="hero-video">
-                    <source src="images/1. HERO/1080p trimmed/A005C049_250113VF.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="overlay">
-                    <p id="hero-quality">Quality</p>
-                </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="carousel-slide">
-                <video muted playsinline class="hero-video">
-                    <source src="images/1. HERO/1080p trimmed/A006C071_250113CS.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="overlay">
-                    <p id="hero-reputation">Reputation</p>
-                </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="carousel-slide">
-                <video muted playsinline class="hero-video">
-                    <source src="images/1. HERO/1080p trimmed/A006C085_250113JM.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="overlay">
-                    <p id="hero-service">Service</p>
-                </div>
-            </div>
-            <!-- End of slides -->
-            <!-- Navigation Buttons -->
-            <button class="prev-btn">❮</button>
-            <button class="next-btn">❯</button>
-        </div>
+    
+        <section id="home" class="full-screen">
         
-        <header>
-            <img src="images/angel-seafood-logo.png" width="200">
-            <p id="year">Since 1986</p>
-            <nav>
-                <a id="nav-about" href="#about">About</a>
-                <a id="nav-features" href="#features">Features</a>
-                <a id="nav-delivery" href="#delivery">Delivery</a>
-                <a id="nav-processing" href="#processing">Processing</a>
-                <a id="nav-contact" href="#contact">Contact</a>
-                <button id="lang-toggle">French</button>
-            </nav>
-        </header>
-    </section>
-    <main>
+            <!-- Carousel -->
+            <div id="hero-carousel">
+                <!-- Gradient Overlay -->
+                <div class="gradient-overlay"></div>
+                <!-- Slide 1 -->
+                <div class="carousel-slide active">
+                    <video muted playsinline class="hero-video">
+                        <source src="images/1. HERO/1080p trimmed/A005C049_250113VF.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="overlay">
+                        <p id="hero-quality">Quality</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <video muted playsinline class="hero-video">
+                        <source src="images/1. HERO/1080p trimmed/A006C071_250113CS.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="overlay">
+                        <p id="hero-reputation">Reputation</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <video muted playsinline class="hero-video">
+                        <source src="images/1. HERO/1080p trimmed/A006C085_250113JM.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="overlay">
+                        <p id="hero-service">Service</p>
+                    </div>
+                </div>
+                <!-- End of slides -->
+                <!-- Navigation Buttons -->
+                <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow(hero) - Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow(hero) - hover & clicked.svg">
+                    <img src="images/0. GRAPHICS/Icons/Left arrow(hero) - Default.svg" alt="Previous">
+                </button>
+                <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow(hero)-Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow(hero)-hover & clicked.svg">
+                    <img src="images/0. GRAPHICS/Icons/Right arrow(hero)-Default.svg" alt="Next">
+                </button>
+            </div>
+            
+            <header>
+                <img src="images/angel-seafood-logo.png" width="150">
+                <p id="year">Since 1986</p>
+                <nav>
+                    <a id="nav-about" href="#about">About</a>
+                    <a id="nav-features" href="#features">Features</a>
+                    <a id="nav-delivery" href="#delivery">Delivery</a>
+                    <a id="nav-processing" href="#processing">Processing</a>
+                    <a id="nav-contact" href="#contact">Contact</a>
+                    <button id="lang-toggle">Français</button>
+                </nav>
+            </header>
+        </section>
+        <main>
         <section id="about">
             <h2 id="about-title">Asian Wholesale <br> Goods Since 1986</h2>
             <p id="about-text">Angel Seafoods has been delivering fresh seafood across Canada since 1986. As a family-run business in its 3rd generation, we continue to uphold our passion for exceptional quality and service.</p>
@@ -106,8 +111,12 @@
                                 <img src="images/4. PRODUCTS CONT/fresh_03.jpg" alt="Fresh seafood 3" width="100%">
                             </div>
                         </div>
-                        <button class="product-prev">&#10094;</button>
-                        <button class="product-next">&#10095;</button>
+                        <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
+                            <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
+                        </button>
+                        <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
+                            <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
+                        </button>
                         <!-- Indicator Circles -->
                         <div class="carousel-indicators"></div>
                     </div>
@@ -133,8 +142,12 @@
                                 <img src="images/4. PRODUCTS CONT/frozen_5.jpg" alt="Frozen seafood 4" width="100%">
                             </div>
                         </div>
-                        <button class="product-prev">&#10094;</button>
-                        <button class="product-next">&#10095;</button>
+                        <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
+                            <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
+                        </button>
+                        <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
+                            <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
+                        </button>
                         <!-- Indicator Circles -->
                         <div class="carousel-indicators"></div>
                     </div>
@@ -163,8 +176,12 @@
                                 <img src="images/4. PRODUCTS CONT/dry_10.jpg" alt="Dry goods 4" width="100%">
                             </div>
                         </div>
-                        <button class="product-prev">&#10094;</button>
-                        <button class="product-next">&#10095;</button>
+                        <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
+                            <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
+                        </button>
+                        <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
+                            <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
+                        </button>
                         <!-- Indicator Circles -->
                         <div class="carousel-indicators"></div>
                     </div>
@@ -187,8 +204,12 @@
                                 <img src="images/4. PRODUCTS CONT/kitchen_03.JPG" alt="Kitchen ware 3" width="100%">
                             </div>
                         </div>
-                        <button class="product-prev">&#10094;</button>
-                        <button class="product-next">&#10095;</button>
+                        <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
+                            <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
+                        </button>
+                        <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
+                            <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
+                        </button>
                         <!-- Indicator Circles -->
                         <div class="carousel-indicators"></div>
                     </div>
@@ -201,7 +222,7 @@
         </section>
 
         <section id="features">
-            <h2>Our Features</h2>
+            <h2 id="features-text">Our Features</h2>
             <div id="feature-carousel">
                 <figure class="feature-image" id="img1">
                     <img src="images/5. FEATURES/Service Image_1.jpeg" id="service">
@@ -255,7 +276,8 @@
 
         <section id="contact">
             <h2 id="contact-title">Get in Touch</h2>
-            <p id="contact-text">Call us to place an order or ask questions. Our multilingual sales team is happy to assist you in English, Japanese, Chinese, Vietnamese, Korean, or French!</p>            <div id="phone-numbers">
+            <p id="contact-text">Call us to place an order or ask questions. Our multilingual sales team is happy to assist you in English, Japanese, Chinese, Vietnamese, Korean, or French!</p>            
+            <div id="phone-numbers">
                 <div id="vancouver">
                     <h3>Vancouver</h3>
                     <p>604-254-2824</p>
@@ -265,13 +287,13 @@
                     <p>514-339-1820</p>
                 </div>
                 <div id="toll-free">
-                    <h3>Canada Toll-free</h3>
+                    <h3 id="toll-free-text">Canada Toll-free</h3>
                     <p>1-800-668-5521</p>
                 </div>
             </div>
         </section>
     </main>
-
+    <hr>
     <footer>
         <p id="footer-company">Angel Seafoods Limited</p>
         <p id="footer-address">8475 Fraser Street<br>Vancouver BC V5X 3Y1</p>
