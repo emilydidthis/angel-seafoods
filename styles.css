@@ -1,9 +1,9 @@
+/* ====== GLOBAL STYLES ====== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    /* color: #C6C6C6; */
     color: white;
 }
 
@@ -12,38 +12,134 @@ body {
     background-color: black;
     line-height: 1.6;
     font-weight: 400;
-
-    overflow: hidden; /* Hide scrollbar */
-    height: 100%; /* Ensure the body takes up the full height of the viewport */
+    
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: auto; /* Allow vertical scrolling */
+    height: 100%; /* Ensure the body takes up full viewport height */
 }
 
-/* Hide scrollbar but allow scrolling */
-html {
-    overflow: auto; /* Allow scrolling */
+html, body {
+    height: 100%;
 }
 
-/* Custom scrollbar styling (optional) */
+#container {
+    max-width: 1440px;
+    margin: auto;
+    background-color: #141414; /* gray borders/background */
+}
+
+#container > * { /* home, main (with all sections), footer */
+    max-width: 1316px;
+    margin: auto;
+}
+
+/* ====== SCROLLBAR STYLING ====== */
 ::-webkit-scrollbar {
-    width: 0; /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
-    background: transparent; /* Make scrollbar track transparent */
+    display: none;
 }
 
-/* ––– HERO ––– */
+/* ====== NAVIGATION ====== */
+header {
+    position: absolute;
+    width: 100%;
+    top: 44px;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 4; /* Above the gradient overlay */
+}
 
-.full-screen {
-    /* height: 100vh; */
+header img { /* angel seafoods logo*/
+    width: 150px;
+}
+
+#year { /* since 1986 */
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.2px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #E0E0E0; 
+}
+#hamburger-menu {
+    display: none;
+}
+nav {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2em;
+}
+
+nav a, #lang-toggle {
+    font-family: 'Crimson Text', serif;
+    font-size: 18px;
+    line-height: 21.6px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin: 0 30px;
+    text-decoration: none;
+    color: #C6C6C6;
+}
+
+#lang-toggle {
+    background-color: rgba(0,0,0,0);
+    border: 0px;
+    cursor: pointer;
+}
+
+
+
+/* ====== CAROUSEL NAVIGATION BUTTONS ====== */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
+    z-index: 5; /* Top layer */
+}
+
+/* Indicator Circles */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+
+/* ====== HERO ====== */
+#home {
     height: 900px;
     position: relative;
-   
 }
 
-/* Gradient Overlay */
-.gradient-overlay {
+.gradient-overlay { /* Gradient Overlay */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1316px;
+    width: 100%;
     height: 100%;
     background: linear-gradient(
         to bottom, 
@@ -51,36 +147,37 @@ html {
         rgba(0, 0, 0, 0.2) 30%, /* Semi-transparent black at 20% */
         rgba(0, 0, 0, 0) 100%  /* Fully transparent at the bottom */
       );
-    /* background: rgba(255, 0, 0, 0.5); */
     z-index: 1;
-
 }
 
-/* Carousel Container */
-#hero-carousel {
-    width: 1316px;
+#hero-carousel { /* Carousel Container */
+    width: 100%;
     height: 100%;  
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
-    
-    box-sizing: content-box;
-    border-left: 75px solid #141414;
-    border-right: 75px solid #141414;
 }
 
-/* Video inside the carousel */
-.hero-video {
+#hero-indicators {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 10px;
+    z-index: 10;
+}
+
+.hero-video { /* Video inside the carousel */
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: relative;
 }
 
-/* Carousel Slide */
-.carousel-slide {
+.carousel-slide { /* Carousel Slide */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -88,14 +185,13 @@ html {
     transition: opacity 1s ease-in-out; /* Fading effect */ 
 }
 
-/* Show only the active slide */
-.carousel-slide.active {
+.carousel-slide.active { /* Show only the active slide */
     opacity: 1;
 }
 
 /* Text overlay inside carousel slide */
-.carousel-slide .overlay { /* positions paragraph */
-    position: absolute;
+.carousel-slide .overlay { 
+    position: absolute; /* positions paragraph */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -116,23 +212,10 @@ html {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Add readability */
 }
 
-/* Navigation Buttons */
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 5px;
-    z-index: 5; /* Top layer */
-}
-
 #hero-carousel .prev-btn { left: 10px; padding: 10px 15px; }
 #hero-carousel .next-btn { right: 10px; padding: 10px 15px; }
 
-
+/* ====== BACKGROUND IMAGE + SECTIONS ====== */
 main{
     background-image: url(images/background-cropped.png);
     background-repeat: no-repeat;
@@ -141,92 +224,21 @@ main{
     display: flex;
     flex-direction: column;
     gap: 82px; /* Adds consistent spacing between sections */
-    
-    width: 1316px;
-    margin-left: auto;
-    margin-right: auto;
-
-    box-sizing: content-box;
-    border-left: 75px solid #141414;
-    border-right: 75px solid #141414;
 }
-
-footer {
-    width: 1316px;
-    margin-left: auto;
-    margin-right: auto;
-
-    box-sizing: content-box;
-    border-left: 75px solid #141414;
-    border-right: 75px solid #141414;
-}
-
-
-/* ––– NAVIGATION ––– */
-header {
-    position: absolute;
-    width: 100%;
-    top: 44px;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 4; /* Above the gradient overlay */
-}
-
-header img { /* angel seafoods logo*/
-    width: 150px;
-}
-
-#year {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18.2px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-}
-
-nav {
-    margin-top: 40px;
-    width: 1316px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 2em;
-}
-
-nav a, #lang-toggle {
-    font-family: 'Crimson Text', serif;
-    font-size: 18px;
-    line-height: 21.6px;
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    margin: 0 30px;
-    text-decoration: none;
-}
-
-#lang-toggle {
-    background-color: rgba(0,0,0,0);
-    border: 0px;
-    cursor: pointer;
-}
-/* ––– SECTIONS  ––– */
-
 
 section:not(#home) {
-    /* min-height: 100vh; */
     padding-top: 42px;
     padding-bottom: 42px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
-
-/* #about {height: 1349px;} */
-/* #features {height: 727px} */
-/* #delivery {height: 671px} */
-/* #processing {height: 645px} */
-/* #contact {height: 270px} */
+/* Section Widths */
+#about { width: 862px; margin: auto;} 
+#features { width: 100%; }
+#delivery { width: 637px; margin: auto; }
+#processing { width: 862px; margin: auto; }
+#contact { width: 862px; margin: auto; margin-bottom: 84px; }
+footer { width: 100%; }
 
 section p {
     font-size: 20px;
@@ -244,15 +256,10 @@ h2 {
     margin-bottom: 40px;
 }
 
-/* ––– ABOUT ––– */
-#about{
-    width: 862px;
-    margin: auto;
-    margin-top: 0px !important; 
-}
+/* ====== ABOUT ====== */
 
 #about h2 {
-    padding-top: 168px; 
+    padding-top: 126px; 
 }
 
 #about > p {
@@ -320,6 +327,11 @@ h2 {
     overflow: hidden;
 }
 
+.product-inner, .product-item, .product-item img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 /* Carousel styles */
 .carousel {
     position: relative;
@@ -327,24 +339,25 @@ h2 {
     overflow: hidden;
 }
 
+.main-product-frame .prev-btn { left: 0px; }
+.main-product-frame .next-btn { right: 0px; }
+
 .product-inner {
-    display: flex;
+    /* display: flex; */
     transition: transform 0.5s ease-in-out;
 }
 
 .product-item {
     min-width: 100%;
-    display: none;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .product-item.active {
-    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
-
-
-.main-product-frame .prev-btn { left: 0px; }
-.main-product-frame .next-btn { right: 0px; }
-
 
 #product-carousel figcaption {
     background-color: #141414;
@@ -400,17 +413,15 @@ figcaption p {
     padding: 0px 30px
 }
 
-/* ––– FEATURES ––– */
+/* ====== FEATURES ====== */
 
 #feature-carousel {
     display: flex;
-    /* width: 2005px; 636px * 3 (per image) + 100px in gaps */
-    width: 1316px;
     gap: 50px;
     justify-content: center;
     height: 625px;
     position: relative; /* allows positioning of overlay */
-    overflow: hidden;
+    overflow: hidden; /* hides the images on the side */
 }
 
 .feature-image {
@@ -428,10 +439,8 @@ figcaption p {
     height: 412px; /* frame height */
     object-fit: cover;
     position: relative; /* allows positioning of overlay */
-    /* overflow: hidden; */
     pointer-events: none;
 }
-
 
 .feature-image figcaption{
     height: 213px;
@@ -441,14 +450,8 @@ figcaption p {
     justify-content: center;
     padding: 0px 30px;
     
-    /* position: absolute; */
-
-    /* display: none; */
-    /* Start fully transparent */
-    opacity: 0; 
-    /* Hide the element */
-    /* visibility: hidden;  */
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    opacity: 0;  /* Hide the element */
+    transition: opacity 0.5s ease-in-out;
 }
 
 .feature-image figcaption div {
@@ -466,17 +469,14 @@ figcaption p {
     padding-left: 30px;
 }
 
-
 .feature-image.fixed {
     pointer-events: none; /* prevents clicks */
-    z-index: 2; /* Higher z-index for the middle (fixed) image */
+    z-index: 10; /* Higher z-index for the middle (fixed) image */
 }
 
 .feature-image.fixed figcaption {
     display: flex;
-    /* position: relative; */
     opacity: 1; /* Fully visible */
-    visibility: visible; /* Show the element */
 }
 
 /* Initial Positions */
@@ -485,26 +485,16 @@ figcaption p {
 #img3 { transform: translateX(685px) translateY(106.5px); } /* Right image */
 
 
-
-/* ––– DELIVERY ––– */
-#delivery {
-    width: 637px;
-    margin: auto;
-}
+/* ====== DELIVERY ====== */
 
 #delivery img{
     height: 359px;
     margin-bottom: 28px;
 }
 
-/* ––– PROCESSING ––– */
-#processing {
-    width: 862px;
-    margin: auto;
-}
+/* ====== PROCESSING ====== */
 
 #processing-video-container {
-    /* width: 100%; */
     height: 485px;
     position: relative;
     margin-bottom: 28px;
@@ -533,36 +523,35 @@ figcaption p {
     transition: opacity 0.3s ease;
   }
 
-/* ––– CONTACT ––– */
-#contact {
-    width: 862px;
-    margin: auto; 
-    /* margin-top: 84px; */
-    margin-bottom: 84px !important;
-    /* padding-bottom: 84px; */
-}
+/* ====== CONTACT ====== */
 
 #phone-numbers{
     margin-top: 42px;
+    width: 100%;
     display: flex;
-    width: 80%;
     justify-content: space-around;
+    align-items: center;
 }
 
-/* Footer */
+/* ====== FOOTER ====== */
+footer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    color: white;
+    background-color: black;
+}
 
 hr {
     border: 1px solid #474747;
-    width: 1316px;
-    margin: auto;
 }
 
-footer {
-    text-align: center;
-    background: #222;
-    color: white;
-    background-color: black;
-    font-weight: 400;
+#scroll-to-top {
+    position: absolute;
+    right: 10px;
+    top: 40%;
 }
 
 footer p:first-of-type {
@@ -588,25 +577,155 @@ footer p {
 }
 
 
-/* Indicator Circles */
-.carousel-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
+/* ====== RESPONSIVE STYLING ====== */
+@media (max-width: 1316px) {
+    #container { width: 100%; }
+    main { width: 100%; }
 }
 
-.carousel-indicators .indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+@media (max-width: 862px) {
+    
+    /* === SECTION WIDTHS === */
+    main { padding: 32px; }
+    #about { width: 100%} 
+    #features { width: 100%; }
+    #delivery { width: 100%; }
+    #processing { width: 100%; }
+    #contact { width: 100%; }
+    footer { width: 100%; }
+    main {    gap: 46px; }
+    section:not(#home) {
+        padding-top: 26px;
+        padding-bottom: 26px;
+    }
+
+    #about h2 { padding-top: 63px; }
+    #contact { margin-bottom: 24px}
+   
+
+
+    /* === TEXT SIZING === */
+    h2 {
+        font-size: 28px;
+        line-height: 39.2px;
+        margin-bottom: 32px;
+    }
+    section p { font-weight: lighter; }
+    .overlay p { font-size: 32px;}
+
+    /* === PRODUCT === */
+    #product-carousel, #product-thumbnails {width: 100%;}
+    #product-thumbnails { gap: 5%;}
+    .product-frame { 
+        width: 100%;  /* Full width of the parent */
+        aspect-ratio: 1 / 1;  /* Maintains a square shape */
+        height: auto;
+    } 
+
+    /* === FEATURES === */
+    #feature-carousel {
+        display: block;
+        overflow: visible;
+    }
+
+    .feature-image {
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .feature-image.fixed {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    #feature-indicators {
+        bottom: -35px;
+        gap: 20px;
+    }
+
+    /* Initial Positions */
+    #img2 { border: 10px solid green; }
+    #img1 { transform: translateX(0) translateY(0); } /* Left image */
+    #img2 { transform: translateX(0) translateY(0); }
+    #img3 { transform: translateX(0) translateY(0); } /* Right image */
+
+
+    /* === PROCESSING VIDEO === */
+    #processing-video-container {
+        height: fit-content;
+    }
+
+    /* === CONTACT === */
+    #phone-numbers {
+        flex-direction: column;
+        gap: 28px;
+    }
 }
 
-.carousel-indicators .indicator.active {
-    background-color: rgba(255, 255, 255, 1);
+@media (max-width: 800px) {
+
+    /* === PRODUCT === */
+    #product-thumbnails { flex-wrap: wrap; justify-content: center; gap: 32px;}
+    .product-frame { width: calc(50% - 32px); }
+    .product-frame, .product-frame.active { filter: grayscale(0%);}
+    .product-caption { width: 90%; text-align: center;}
+    #product-carousel figure { display: none; }
+    /* === DELIVERY === */
+    #delivery img { width: 100%; height: auto;}
+
+}
+
+@media (max-width: 650px) {
+    /* === NAVIGATION === */
+    nav {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        background-color: black;
+        width: fit-content;
+        padding: 10px;
+        border: 1px solid white;
+        z-index: 1000;
+    }
+
+    nav a, #lang-toggle {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        color: white;
+    }
+
+    #lang-toggle { margin: auto; }
+    
+    nav.active { /* Show the menu when it's active */
+        display: flex;
+    }
+
+    #hamburger-menu {   /* Style the hamburger menu button */
+        display: block;
+        font-weight: 400;
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: relative;
+        top: 20px;
+        margin: auto;
+    }
+
+    /* === HERO === */
+
+    #home { height: 768px; }
+    #hero-carousel .nav-button { display: none;}
+    #hero-indicators { display: flex; }
+
+}
+
+@media (max-width: 425px) {
+    #product-thumbnails { flex-direction: column; gap: 32px;}
+    .product-frame { width: 100%; }
+    .product-caption { font-size: 20px; }
 }

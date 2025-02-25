@@ -1,6 +1,22 @@
+// ------- NAVIGATION HAMBURGER TOGGLE -------
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("hamburger-menu");
+    const navLinks = document.querySelector("nav");
 
-// ------- HERO CAROUSEL -------
+    menuButton.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
 
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+});
+
+
+// ------- CHANGE BUTTON ON ACTIVE PRESS -------
 // Select all buttons with the class .hero-nav-button
 const navButtons = document.querySelectorAll('.nav-button');
 
@@ -25,48 +41,49 @@ navButtons.forEach(button => {
 });
 
 
-const slides = document.querySelectorAll(".carousel-slide");
-const prevBtn = document.querySelector(".prev-btn");
-const nextBtn = document.querySelector(".next-btn");
-let currentSlide = 0;
+// ------- HERO CAROUSEL -------
+// const slides = document.querySelectorAll(".carousel-slide");
+// const prevBtn = document.querySelector(".prev-btn");
+// const nextBtn = document.querySelector(".next-btn");
+// let currentSlide = 0;
 
 
-// Function to change slide
-function changeSlide(index) {
-    console.log("changing slide");
-    slides[currentSlide].classList.remove("active"); // Hide current slide
+// // Function to change slide
+// function changeSlide(index) {
+//     console.log("changing slide");
+//     slides[currentSlide].classList.remove("active"); // Hide current slide
     
-    currentSlide = (index + slides.length) % slides.length; // Ensure looping
-    slides[currentSlide].classList.add("active"); // Show new slide
+//     currentSlide = (index + slides.length) % slides.length; // Ensure looping
+//     slides[currentSlide].classList.add("active"); // Show new slide
 
-    // Restart and play the new video
-    const currentVideo = slides[currentSlide].querySelector(".hero-video");
-    currentVideo.currentTime = 0; // Restart the video
-    currentVideo.play();
-    updateCurrentVideo();
-}
+//     // Restart and play the new video
+//     const currentVideo = slides[currentSlide].querySelector(".hero-video");
+//     currentVideo.currentTime = 0; // Restart the video
+//     currentVideo.play();
+//     updateCurrentVideo();
+// }
 
-// Button event listeners
-prevBtn.addEventListener("click", () => changeSlide(currentSlide - 1));
-nextBtn.addEventListener("click", () => changeSlide(currentSlide + 1));
+// // Button event listeners
+// prevBtn.addEventListener("click", () => changeSlide(currentSlide - 1));
+// nextBtn.addEventListener("click", () => changeSlide(currentSlide + 1));
 
-function updateCurrentVideo(){
-    const currentVideo = slides[currentSlide].querySelector(".hero-video");
-    currentVideo.addEventListener("timeupdate", checkTimeBeforeEnd);
+// function updateCurrentVideo(){
+//     const currentVideo = slides[currentSlide].querySelector(".hero-video");
+//     currentVideo.addEventListener("timeupdate", checkTimeBeforeEnd);
 
-    function checkTimeBeforeEnd() {
-        if (currentVideo.currentTime >= currentVideo.duration - 1) {
-            console.log("1 second before the video ends!");
-            // Trigger your action here (e.g., change slide in a carousel)
-            changeSlide(currentSlide + 1);
-            currentVideo.removeEventListener("timeupdate", checkTimeBeforeEnd); // Remove the listener after triggering
-        }
-    }
-}
+//     function checkTimeBeforeEnd() {
+//         if (currentVideo.currentTime >= currentVideo.duration - 1) {
+//             console.log("1 second before the video ends!");
+//             // Trigger your action here (e.g., change slide in a carousel)
+//             changeSlide(currentSlide + 1);
+//             currentVideo.removeEventListener("timeupdate", checkTimeBeforeEnd); // Remove the listener after triggering
+//         }
+//     }
+// }
 
-// Play the first video initially
-slides[currentSlide].querySelector(".hero-video").play();
-updateCurrentVideo();
+// // Play the first video initially
+// slides[currentSlide].querySelector(".hero-video").play();
+// updateCurrentVideo();
 
 // ------- PRODUCTS CAROUSEL -------
 
@@ -79,7 +96,9 @@ thumbnails.forEach((thumbnail) => {
     thumbnail.addEventListener('click', () => {
         // Get the corresponding figure ID from the thumbnail's class
         const targetId = thumbnail.classList[1]; // e.g., "fresh-seafood"
+        console.log(targetId)
         const targetFigure = document.getElementById(targetId);
+        console.log(targetFigure)
 
         // Hide all figures
         figures.forEach((figure) => {
@@ -164,9 +183,66 @@ document.querySelectorAll('.main-product-frame').forEach((carousel) => {
 });
 
 // ------- FEATURES CAROUSEL -------
-const img1 = document.getElementById("img1");
-const img2 = document.getElementById("img2"); // Middle image (Fixed)
-const img3 = document.getElementById("img3");
+
+    // Listen for window resize and debounce changes
+    window.addEventListener("resize", function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(initCarousel, 200); // Wait for resizing to finish before switching
+    });
+function toggleCarousel() {
+    if (window.matchMedia("(max-width: 862px)").matches) {
+        order[0].style.transform = "translateX(0px) translateY(0px)"; // Move left and down
+        order[1].style.transform = "translateX(0px) translateY(0px)"; // Center and move up
+        order[2].style.transform = "translateX(0px) translateY(0px)"; // Move right and down
+    } 
+}
+
+
+
+let feature_currentSlide = 1;
+const feature_slides = document.querySelectorAll(".feature-image");
+
+const feature_indicatorsContainer = document.getElementById("feature-indicators");
+// Create indicators dynamically
+    feature_slides.forEach((_, index) => {
+        const indicator = document.createElement("div");
+        indicator.classList.add("indicator");
+        if (index === 1) indicator.classList.add("active"); // Mark first as active
+
+        // Add click event to go to specific slide
+        indicator.addEventListener("click", () => {
+            feature_changeSlide(index);
+        });
+
+        feature_indicatorsContainer.appendChild(indicator);
+    });
+
+    
+    // Update active indicator when slide changes
+    function feature_updateIndicators() {
+        document.querySelectorAll("#feature-indicators .indicator").forEach((indicator, index) => {
+            console.log("index:", index, "slide:", feature_currentSlide)
+            indicator.classList.toggle("active", index === feature_currentSlide);
+        });
+    }
+
+    // Function to change slide
+    function feature_changeSlide(index) {
+        // console.log("changing slide, index:", index);
+        feature_slides[feature_currentSlide].classList.remove("fixed"); // Hide current slide
+        
+        feature_currentSlide = (index + feature_slides.length) % feature_slides.length; // Ensure looping
+        feature_slides[feature_currentSlide].classList.add("fixed"); // Show new slide
+
+        feature_updateIndicators();
+    }
+
+
+const img1 = document.getElementById("img1"); // slides[0]
+const img2 = document.getElementById("img2"); // Middle image (Fixed) // slides[1]
+const img3 = document.getElementById("img3"); // slides[2]
+
+
 
 // Track the current order of images
 let order = [img1, img2, img3];
@@ -174,14 +250,18 @@ let order = [img1, img2, img3];
 
 // Function to swap images correctly
 function swapImages(clickedImage) {
+    
   if (clickedImage === order[0]) {
     // Shift left: [3, 1, 2]
     order = [order[2], order[0], order[1]];
+    feature_currentSlide = (feature_currentSlide - 1 + order.length) % order.length;
   } else if (clickedImage === order[2]) {
     // Shift right: [2, 3, 1]
     order = [order[1], order[2], order[0]];
+    feature_currentSlide = (feature_currentSlide + 1 ) % order.length;
   }
-  
+  console.log(feature_currentSlide);
+  feature_updateIndicators();
   // Remove fixed from all elements except clicked
   order.forEach((element) => element.classList.remove('fixed'));
   clickedImage.classList.add('fixed');

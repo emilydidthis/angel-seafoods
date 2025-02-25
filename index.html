@@ -11,9 +11,28 @@
 
 </head>
 <body>
-    
-        <section id="home" class="full-screen">
-        
+    <div id="container">
+        <section id="home">
+            <header>
+                <img src="images/angel-seafood-logo.png" width="150">
+                <p id="year">Since 1986</p>
+                <button id="hamburger-menu" aria-label="Toggle navigation">
+                    <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="14.4062" width="28" height="2" fill="white"/>
+                    <rect x="10" y="23.4062" width="28" height="2" fill="white"/>
+                    <rect x="10" y="32.4062" width="28" height="2" fill="white"/>
+                    </svg>
+                </button>
+                <nav>
+                    <a id="nav-about" href="#about">About</a>
+                    <a id="nav-features" href="#features">Features</a>
+                    <a id="nav-delivery" href="#delivery">Delivery</a>
+                    <a id="nav-processing" href="#processing">Processing</a>
+                    <a id="nav-contact" href="#contact">Contact</a>
+                    <button id="lang-toggle">Français</button>
+                </nav>
+            </header>
+            
             <!-- Carousel -->
             <div id="hero-carousel">
                 <!-- Gradient Overlay -->
@@ -56,252 +75,248 @@
                 <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow(hero)-Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow(hero)-hover & clicked.svg">
                     <img src="images/0. GRAPHICS/Icons/Right arrow(hero)-Default.svg" alt="Next">
                 </button>
+                <!-- Carousel Indicators  -->
+                <div class="carousel-indicators" id="hero-indicators"></div>
             </div>
-            
-            <header>
-                <img src="images/angel-seafood-logo.png" width="150">
-                <p id="year">Since 1986</p>
-                <nav>
-                    <a id="nav-about" href="#about">About</a>
-                    <a id="nav-features" href="#features">Features</a>
-                    <a id="nav-delivery" href="#delivery">Delivery</a>
-                    <a id="nav-processing" href="#processing">Processing</a>
-                    <a id="nav-contact" href="#contact">Contact</a>
-                    <button id="lang-toggle">Français</button>
-                </nav>
-            </header>
         </section>
         <main>
-        <section id="about">
-            <h2 id="about-title">Asian Wholesale <br> Goods Since 1986</h2>
-            <p id="about-text">Angel Seafoods has been delivering fresh seafood across Canada since 1986. As a family-run business in its 3rd generation, we continue to uphold our passion for exceptional quality and service.</p>
-            <div id="product-carousel"> 
-                <!-- Thumbnails -->
-                <div id="product-thumbnails">
-                    <div class="product-frame fresh-seafood active">
-                        <img src="images/3. PRODUCTS/FreshSeafood_ProductPhoto_1.jpg" alt="fresh seafood">
-                        <div class="product-caption" id="fresh-seafood-thumbnail-title">Fresh seafood</div>
-                    </div>
-                    <div class="product-frame frozen-seafood">
-                        <img src="images/3. PRODUCTS/DSC02541.jpg" alt="frozen seafood products">
-                        <div class="product-caption" id="frozen-seafood-thumbnail-title">Frozen seafood</div>
-                    </div>
-                    <div class="product-frame dry-goods">
-                        <img src="images/3. PRODUCTS/DSC02463.jpg" alt="dry goods products">
-                        <div class="product-caption" id="dry-goods-thumbnail-title">Dry goods</div>
-                    </div>
-                    <div class="product-frame kitchen-wares">
-                        <img src="images/3. PRODUCTS/kitchen-wares.jpeg" alt="kitchenware products">
-                        <div class="product-caption" id="kitchen-ware-thumbnail-title">Kitchen ware</div>
-                    </div> 
+            <section id="about">
+                <h2 id="about-title">Asian Wholesale <br> Goods Since 1986</h2>
+                <p id="about-text">Angel Seafoods has been delivering fresh seafood across Canada since 1986. As a family-run business in its 3rd generation, we continue to uphold our passion for exceptional quality and service.</p>
+                <div id="product-carousel"> 
+                    <!-- Thumbnails -->
+                    <ul id="product-thumbnails">
+                        <li class="product-frame fresh-seafood active">
+                            <img src="images/3. PRODUCTS/FreshSeafood_ProductPhoto_1.jpg" alt="fresh seafood">
+                            <p class="product-caption" id="fresh-seafood-thumbnail-title">Fresh seafood</p>
+                        </li>
+                        <li class="product-frame frozen-seafood">
+                            <img src="images/3. PRODUCTS/DSC02541.jpg" alt="frozen seafood products">
+                            <p class="product-caption" id="frozen-seafood-thumbnail-title">Frozen seafood</p>
+                        </li>
+                        <li class="product-frame dry-goods">
+                            <img src="images/3. PRODUCTS/DSC02463.jpg" alt="dry goods products">
+                            <p class="product-caption" id="dry-goods-thumbnail-title">Dry goods</p>
+                        </li>
+                        <li class="product-frame kitchen-wares">
+                            <img src="images/3. PRODUCTS/kitchen-wares.jpeg" alt="kitchenware products">
+                            <p class="product-caption" id="kitchen-ware-thumbnail-title">Kitchen ware</p>
+                        </li> 
+                    </ul>
+                    <!-- Figures (Carousels) -->
+                    <!-- Fresh Seafood -->
+                    <figure id="fresh-seafood" class="active">
+                        <div class="main-product-frame" >
+                            <div class="product-inner">
+                                <div class="product-item active">
+                                    <img src="images/4. PRODUCTS CONT/fresh_00.jpg" alt="Fresh seafood 1" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/fresh_02.jpg" alt="Fresh seafood 2" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/fresh_03.jpg" alt="Fresh seafood 3" width="100%">
+                                </div>
+                            </div>
+                            <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
+                                <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
+                            </button>
+                            <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
+                                <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
+                            </button>
+                            <!-- Indicator Circles -->
+                            <div class="carousel-indicators"></div>
+                        </div>
+                        <figcaption>
+                            <h3 id="fresh-seafood-title">Fresh Seafood</h3>
+                            <p id="fresh-seafood-text">Angel Seafoods has an understanding of “sashimi grade” like no other as the majority of the premium-grade products we source are intended to be served in a raw application.</p>
+                        </figcaption>
+                    </figure>
+                    <!-- Frozen Seafood -->
+                    <figure id="frozen-seafood">
+                        <div class="main-product-frame">
+                            <div class="product-inner">
+                                <div class="product-item active">
+                                    <img src="images/4. PRODUCTS CONT/frozen_1.jpg" alt="Frozen seafood 1" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/frozen_2.JPG" alt="Frozen seafood 2" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/frozen_3.jpg" alt="Frozen seafood 3" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/frozen_5.jpg" alt="Frozen seafood 4" width="100%">
+                                </div>
+                            </div>
+                            <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
+                                <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
+                            </button>
+                            <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
+                                <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
+                            </button>
+                            <!-- Indicator Circles -->
+                            <div class="carousel-indicators"></div>
+                        </div>
+                        <figcaption>
+                            <h3 id="frozen-seafood-title">Frozen Seafood</h3>
+                            <p id="frozen-seafood-text">Angel Seafoods has an unmatched understanding of the variety of high quality frozen seafoods desired by the Japanese food service sector and aligns with suppliers that can match that.</p>
+                        </figcaption>
+                    </figure>
+                    <!-- Dry Goods -->
+                    <figure id="dry-goods">
+                        <div class="main-product-frame" >
+                            <div class="product-inner">
+                                <div class="product-item active">
+                                    <img src="images/4. PRODUCTS CONT/dry_03.jpg" alt="Dry goods 1" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/dry_06.jpg" alt="Dry goods 2" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/dry_08.jpg" alt="Dry goods 3" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/dry_09.jpg" alt="Dry goods 4" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/dry_10.jpg" alt="Dry goods 4" width="100%">
+                                </div>
+                            </div>
+                            <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
+                                <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
+                            </button>
+                            <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
+                                <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
+                            </button>
+                            <!-- Indicator Circles -->
+                            <div class="carousel-indicators"></div>
+                        </div>
+                        <figcaption>
+                            <h3 id="dry-goods-title">Dry Goods</h3>
+                            <p id="dry-goods-text">Angel Seafoods takes pride in sourcing food products from Japan and other areas of the world ensuring the quality matches our high standards.</p>
+                        </figcaption>
+                    </figure>
+                    <!-- Kitchen Wares -->
+                    <figure id="kitchen-wares">
+                        <div class="main-product-frame" >
+                            <div class="product-inner">
+                                <div class="product-item active">
+                                    <img src="images/4. PRODUCTS CONT/kitchen_01.JPG" alt="Kitchen ware 1" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/kitchen_02.jpg" alt="Kitchen ware 2" width="100%">
+                                </div>
+                                <div class="product-item">
+                                    <img src="images/4. PRODUCTS CONT/kitchen_03.JPG" alt="Kitchen ware 3" width="100%">
+                                </div>
+                            </div>
+                            <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
+                                <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
+                            </button>
+                            <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
+                                <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
+                            </button>
+                            <!-- Indicator Circles -->
+                            <div class="carousel-indicators"></div>
+                        </div>
+                        <figcaption>
+                            <h3 id="kitchen-ware-title">Kitchen Ware</h3>
+                            <p id="kitchen-ware-text">We also provide an array of kitchenware from Japanese sashimi knives to bento boxes and containers. We aim to be a one-stop shop, allowing you to order a large selection of items in one place.</p>
+                        </figcaption>
+                    </figure>
                 </div>
-                <!-- Figures (Carousels) -->
-                <!-- Fresh Seafood -->
-                <figure id="fresh-seafood" class="active">
-                    <div class="main-product-frame" >
-                        <!-- <img src="images/4. PRODUCTS CONT/fresh_00.jpg" width="100%"> -->
-                        <div class="product-inner">
-                            <div class="product-item active">
-                                <img src="images/4. PRODUCTS CONT/fresh_00.jpg" alt="Fresh seafood 1" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/fresh_02.jpg" alt="Fresh seafood 2" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/fresh_03.jpg" alt="Fresh seafood 3" width="100%">
-                            </div>
-                        </div>
-                        <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
-                            <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
-                        </button>
-                        <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
-                            <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
-                        </button>
-                        <!-- Indicator Circles -->
-                        <div class="carousel-indicators"></div>
-                    </div>
-                    <figcaption>
-                        <h3 id="fresh-seafood-title">Fresh Seafood</h3>
-                        <p id="fresh-seafood-text">Angel Seafoods has an understanding of “sashimi grade” like no other as the majority of the premium-grade products we source are intended to be served in a raw application.</p>
-                    </figcaption>
-                </figure>
-                <!-- Frozen Seafood -->
-                <figure id="frozen-seafood">
-                    <div class="main-product-frame">
-                        <div class="product-inner">
-                            <div class="product-item active">
-                                <img src="images/4. PRODUCTS CONT/frozen_1.jpg" alt="Frozen seafood 1" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/frozen_2.JPG" alt="Frozen seafood 2" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/frozen_3.jpg" alt="Frozen seafood 3" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/frozen_5.jpg" alt="Frozen seafood 4" width="100%">
-                            </div>
-                        </div>
-                        <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
-                            <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
-                        </button>
-                        <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
-                            <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
-                        </button>
-                        <!-- Indicator Circles -->
-                        <div class="carousel-indicators"></div>
-                    </div>
-                    <figcaption>
-                        <h3 id="frozen-seafood-title">Frozen Seafood</h3>
-                        <p id="frozen-seafood-text">Angel Seafoods has an unmatched understanding of the variety of high quality frozen seafoods desired by the Japanese food service sector and aligns with suppliers that can match that.</p>
-                    </figcaption>
-                </figure>
-                <!-- Dry Goods -->
-                <figure id="dry-goods">
-                    <div class="main-product-frame" >
-                        <div class="product-inner">
-                            <div class="product-item active">
-                                <img src="images/4. PRODUCTS CONT/dry_03.jpg" alt="Dry goods 1" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/dry_06.jpg" alt="Dry goods 2" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/dry_08.jpg" alt="Dry goods 3" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/dry_09.jpg" alt="Dry goods 4" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/dry_10.jpg" alt="Dry goods 4" width="100%">
-                            </div>
-                        </div>
-                        <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
-                            <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
-                        </button>
-                        <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
-                            <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
-                        </button>
-                        <!-- Indicator Circles -->
-                        <div class="carousel-indicators"></div>
-                    </div>
-                    <figcaption>
-                        <h3 id="dry-goods-title">Dry Goods</h3>
-                        <p id="dry-goods-text">Angel Seafoods takes pride in sourcing food products from Japan and other areas of the world ensuring the quality matches our high standards.</p>
-                    </figcaption>
-                </figure>
-                <!-- Kitchen Wares -->
-                <figure id="kitchen-wares">
-                    <div class="main-product-frame" >
-                        <div class="product-inner">
-                            <div class="product-item active">
-                                <img src="images/4. PRODUCTS CONT/kitchen_01.JPG" alt="Kitchen ware 1" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/kitchen_02.jpg" alt="Kitchen ware 2" width="100%">
-                            </div>
-                            <div class="product-item">
-                                <img src="images/4. PRODUCTS CONT/kitchen_03.JPG" alt="Kitchen ware 3" width="100%">
-                            </div>
-                        </div>
-                        <button class="nav-button prev-btn" data-default="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" data-active="images/0. GRAPHICS/Icons/Left arrow button (carousel)-hover & pressed.svg">
-                            <img src="images/0. GRAPHICS/Icons/Left arrow button (carousel)-Default.svg" alt="Previous">
-                        </button>
-                        <button class="nav-button next-btn" data-default="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" data-active="images/0. GRAPHICS/Icons/Right arrow button (carousel) - hover & pressed.svg">
-                            <img src="images/0. GRAPHICS/Icons/Right arrow button (carousel) - Default.svg" alt="Next">
-                        </button>
-                        <!-- Indicator Circles -->
-                        <div class="carousel-indicators"></div>
-                    </div>
-                    <figcaption>
-                        <h3 id="kitchen-ware-title">Kitchen Ware</h3>
-                        <p id="kitchen-ware-text">We also provide an array of kitchenware from Japanese sashimi knives to bento boxes and containers. We aim to be a one-stop shop, allowing you to order a large selection of items in one place.</p>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
+            </section>
 
-        <section id="features">
-            <h2 id="features-text">Our Features</h2>
-            <div id="feature-carousel">
-                <figure class="feature-image" id="img1">
-                    <img src="images/5. FEATURES/Service Image_1.jpeg" id="service">
-                    <figcaption>
-                        <h3 id="service-title">Service</h3>
-                        <div>
-                            <p id="service-text">Angel Seafoods is a multilingual company and can serve you in English, Japanese, Mandarin, Cantonese, Vietnamese, Korean, or French. The growing popularity for Asian foods in Canada has led us to supply people of all backgrounds and cultures.</p>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="feature-image fixed" id="img2">
-                    <img src="images/5. FEATURES/AngelBrand_Image_1.jpg" id="brand">
-                    <figcaption>
-                        <h3 id="angel-brand-title">Angel brand</h3>
-                        <div>
-                            <img src="images/logo-mark.png" width="80" height="80">
-                            <p id="angel-brand-text">The Angel Brand represents a curated selection of exclusive products available only through Angel. Each item reflects our dedication to quality, authenticity, and uniqueness.</p>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="feature-image" id="img3">
-                    <img src="images/5. FEATURES/japanFresh_Image_1.png" id="fresh">
-                    <figcaption>
-                        <h3 id="japan-fresh-title">Japan Fresh</h3>
-                        <div>
-                            <img src="images/5. FEATURES/Japan Fresh_LOGO_temp.jpeg" width="auto" height="80">
-                            <p id="japan-fresh-text">Angel Seafoods offers ‘Japan Fresh’, an overnight air shipment of fresh seafood bringing Tokyo’s catch of the day directly to you.</p>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <section id="delivery">
-            <h2 id="delivery-title">Delivery Across <br> Canada</h2>
-            <img src="images/6. DELIVERY/DeliveryImage_1.png" alt="Angel Seafoods delivery truck">
-            <p id="delivery-text">At Angel, we deliver our premium food products multiple times a week to clients throughout the Vancouver lower mainland districts including Victoria and Whistler. We also have an operation in Montreal covering most districts in that area including Ottawa. With the assistance of proven outside logistic specialists Angel Seafoods products are being delivered to areas as far as the Yukon, Northwest Territories, and Maritimes.</p>
-        </section>
-
-        <section id="processing">
-            <h2 id="processing-title">Traditional Processing</h2>
-            <div id="processing-video-container">
-                <video poster="images/7. PROCESSING/processing-cover.png" id="processing-video">
-                    <source src="images/7. PROCESSING/ProcessingVideo_1.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <button id="playButton" class="play-btn">▶</button>
-            </div>
-            <p id="processing-text">Discover how we ensure quality at every step.</p>
-        </section>
-
-        <section id="contact">
-            <h2 id="contact-title">Get in Touch</h2>
-            <p id="contact-text">Call us to place an order or ask questions. Our multilingual sales team is happy to assist you in English, Japanese, Chinese, Vietnamese, Korean, or French!</p>            
-            <div id="phone-numbers">
-                <div id="vancouver">
-                    <h3>Vancouver</h3>
-                    <p>604-254-2824</p>
+            <section id="features">
+                <h2 id="features-text">Our Features</h2>
+                <div id="feature-carousel">
+                    <figure class="feature-image" id="img1">
+                        <img src="images/5. FEATURES/Service Image_1.jpeg" id="service">
+                        <figcaption>
+                            <h3 id="service-title">Service</h3>
+                            <div>
+                                <p id="service-text">Angel Seafoods is a multilingual company and can serve you in English, Japanese, Mandarin, Cantonese, Vietnamese, Korean, or French. The growing popularity for Asian foods in Canada has led us to supply people of all backgrounds and cultures.</p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure class="feature-image fixed" id="img2">
+                        <img src="images/5. FEATURES/AngelBrand_Image_1.jpg" id="brand">
+                        <figcaption>
+                            <h3 id="angel-brand-title">Angel brand</h3>
+                            <div>
+                                <img src="images/logo-mark.png" width="80" height="80">
+                                <p id="angel-brand-text">The Angel Brand represents a curated selection of exclusive products available only through Angel. Each item reflects our dedication to quality, authenticity, and uniqueness.</p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure class="feature-image" id="img3">
+                        <img src="images/5. FEATURES/japanFresh_Image_1.png" id="fresh">
+                        <figcaption>
+                            <h3 id="japan-fresh-title">Japan Fresh</h3>
+                            <div>
+                                <img src="images/5. FEATURES/Japan Fresh_LOGO_temp.jpeg" width="auto" height="80">
+                                <p id="japan-fresh-text">Angel Seafoods offers ‘Japan Fresh’, an overnight air shipment of fresh seafood bringing Tokyo’s catch of the day directly to you.</p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <!-- Carousel Indicators  -->
+                    <div class="carousel-indicators" id="feature-indicators"></div>
                 </div>
-                <div id="montreal">
-                    <h3>Montreal</h3>
-                    <p>514-339-1820</p>
+            </section>
+
+            <section id="delivery">
+                <h2 id="delivery-title">Delivery Across <br> Canada</h2>
+                <img src="images/6. DELIVERY/DeliveryImage_1.png" alt="Angel Seafoods delivery truck">
+                <p id="delivery-text">At Angel, we deliver our premium food products multiple times a week to clients throughout the Vancouver lower mainland districts including Victoria and Whistler. We also have an operation in Montreal covering most districts in that area including Ottawa. With the assistance of proven outside logistic specialists Angel Seafoods products are being delivered to areas as far as the Yukon, Northwest Territories, and Maritimes.</p>
+            </section>
+
+            <section id="processing">
+                <h2 id="processing-title">Traditional Processing</h2>
+                <div id="processing-video-container">
+                    <video poster="images/7. PROCESSING/processing-cover.png" id="processing-video">
+                        <source src="images/7. PROCESSING/ProcessingVideo_1.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button id="playButton" class="play-btn">▶</button>
                 </div>
-                <div id="toll-free">
-                    <h3 id="toll-free-text">Canada Toll-free</h3>
-                    <p>1-800-668-5521</p>
+                <p id="processing-text">Discover how we ensure quality at every step.</p>
+            </section>
+
+            <section id="contact">
+                <h2 id="contact-title">Get in Touch</h2>
+                <p id="contact-text">Call us to place an order or ask questions. Our multilingual sales team is happy to assist you in English, Japanese, Chinese, Vietnamese, Korean, or French!</p>            
+                <div id="phone-numbers">
+                    <div id="vancouver">
+                        <h3>Vancouver</h3>
+                        <p>604-254-2824</p>
+                    </div>
+                    <div id="montreal">
+                        <h3>Montreal</h3>
+                        <p>514-339-1820</p>
+                    </div>
+                    <div id="toll-free">
+                        <h3 id="toll-free-text">Canada Toll-free</h3>
+                        <p>1-800-668-5521</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <hr>
-    <footer>
-        <p id="footer-company">Angel Seafoods Limited</p>
-        <p id="footer-address">8475 Fraser Street<br>Vancouver BC V5X 3Y1</p>
-        <img id="fb-logo" src="images/facebook-logo.svg">
-        <p>&copy; 2025 Angel Seafoods Ltd. All Rights Reserved. </p>
-        <!-- <p>Private Policy | Terms of Use</p> -->
-    </footer>
-    <script src="script.js"></script>
-    <script src="language.js"></script>
+            </section>
+        </main>   
+        <footer>
+            <hr>
+            <button id="scroll-to-top" class="nav-button" data-default="images/0. GRAPHICS/Icons/Back to top - Default.svg" data-active="images/0. GRAPHICS/Icons/Back to top - pressed.svg">
+                <a href="#home"><img src="images/0. GRAPHICS/Icons/Back to top - Default.svg"></a>
+            </button>
+            <p id="footer-company">Angel Seafoods Limited</p>
+            <p id="footer-address">8475 Fraser Street<br>Vancouver BC V5X 3Y1</p>
+            <img id="fb-logo" src="images/facebook-logo.svg" alt="Facebook logo">
+            <p>&copy; 2025 Angel Seafoods Ltd. All Rights Reserved. </p>
+            <!-- <p>Privacy Policy | Terms of Use</p> -->
+        </footer>
+    </div>
+    <script src="script.js" defer></script>
+    <script src="language.js" defer></script>
+    <script src="hero-carousel.js" defer></script>
+    <!-- <script src="features-carousel-toggle.js" defer></script> -->
 </body>
 </html>
