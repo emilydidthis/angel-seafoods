@@ -693,6 +693,7 @@ footer p {
 }
 
 @media (max-width: 650px) {
+    #container { background-color: black; }
     /* === NAVIGATION === */
     nav {
         display: none;
