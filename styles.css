@@ -234,7 +234,7 @@ section:not(#home) {
 
 /* Section Widths */
 #about { width: 862px; margin: auto;} 
-#features { width: 100%; }
+#features { width: 100%; position: relative;}
 #delivery { width: 637px; margin: auto; }
 #processing { width: 862px; margin: auto; }
 #contact { width: 862px; margin: auto; margin-bottom: 84px; }
@@ -424,6 +424,10 @@ figcaption p {
     overflow: hidden; /* hides the images on the side */
 }
 
+#feature-indicators {
+    display: none;
+}
+
 .feature-image {
     position: absolute;
     width: 635px;
@@ -443,7 +447,8 @@ figcaption p {
 }
 
 .feature-image figcaption{
-    height: 213px;
+    align-items: stretch; /* Ensure children stretch to fit content */
+    min-height: 213px;
     background-color: #141414;
     display: flex;
     flex-direction: column;
@@ -630,23 +635,33 @@ footer p {
 
     .feature-image {
         width: 100%;
-        position: absolute;
+        /* position: absolute; */
+        position: relative;
+        visibility: hidden;
+        height: 0; /* Collapse the height */
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
     }
 
     .feature-image.fixed {
+        visibility: visible;
+        height: auto;
         opacity: 1;
         transition: opacity 0.5s ease-in-out;
     }
 
+    #feature-carousel {
+        height: fit-content;
+    }
+
     #feature-indicators {
-        bottom: -35px;
-        gap: 20px;
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        bottom: -30px;
     }
 
     /* Initial Positions */
-    #img2 { border: 10px solid green; }
     #img1 { transform: translateX(0) translateY(0); } /* Left image */
     #img2 { transform: translateX(0) translateY(0); }
     #img3 { transform: translateX(0) translateY(0); } /* Right image */
@@ -728,4 +743,11 @@ footer p {
     #product-thumbnails { flex-direction: column; gap: 32px;}
     .product-frame { width: 100%; }
     .product-caption { font-size: 20px; }
+
+    .feature-image figcaption div { flex-direction: column;}
+
+    .feature-image figcaption div img { order: 2; margin: 10px auto;}
+    .feature-image figcaption div p { order: 1}
+
+
 }
